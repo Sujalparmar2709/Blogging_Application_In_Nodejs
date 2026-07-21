@@ -3,49 +3,59 @@
   data-bs-theme="dark"
 >
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Blogify</a>
+    <a class="navbar-brand" href="/">Blogify</a>
+
     <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
+
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" href="/">Home</a>
         </li>
+
         <% if (locals.user) { %>
+
         <li class="nav-item">
           <a class="nav-link" href="/blog/add-new">Add Blog</a>
         </li>
+
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
             href="#"
             role="button"
             data-bs-toggle="dropdown"
-            aria-expanded="false"
           >
-            Piyush Garg
+            Sujal Parmar
           </a>
+
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
+            <li>
+              <a class="dropdown-item" href="/user/logout">Logout</a>
+            </li>
           </ul>
         </li>
-        <% } else {%>
+
+        <% } else { %>
+
         <li class="nav-item">
           <a class="nav-link" href="/user/signup">Create Account</a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="/user/signin">Signin</a>
         </li>
+
         <% } %>
+
       </ul>
     </div>
   </div>
@@ -53,6 +63,8 @@
 
 <% if (locals.error) { %>
 <div class="container mt-4">
-  <div class="alert alert-danger" role="alert"><%= locals.error %></div>
+  <div class="alert alert-danger">
+    <%= locals.error %>
+  </div>
 </div>
 <% } %>
